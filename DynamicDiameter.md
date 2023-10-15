@@ -20,15 +20,12 @@ I will use the word **highest/higher/high** to refer the node that is closer to 
 
 #### Lemma 1
 
-```
-Diameter of a tree is the distance between two furthest nodes in the tree. Let's say the diameter pair is (x, y), when adding a new point u, the new diameter pair is either (x, y), (x, u) or (u, y).
-```
+
+> Diameter of a tree is the distance between two furthest nodes in the tree. Let's say the diameter pair is (x, y), when adding a new point u, the new diameter pair is either (x, y), (x, u) or (u, y).
 
 #### Lemma 2
 
-```
-For each node in u, the furthest node from u is either x or y, where the diameter pair of the tree is (x, y). 
-```
+> For each node in u, the furthest node from u is either x or y, where the diameter pair of the tree is (x, y). 
 
 WLOG, let's root the original tree at $1$. Define $depth[x]$ as the distance of a node $x$ in the tree from the root, where $depth[1] = 0$. 
 
@@ -90,8 +87,8 @@ For the implementation details and debugging: Let's look at this random example.
 Consider the centroid decomposition of this tree, if we see here, the node $2$ in the centroid tree will store:
 
 - $bestMatch[2] = \{(1, 1, 1), (4, 8, 10), (3, 5, 6)\}$
-  - $(\textcolor{red}{1}, \textcolor{blue}{1}, \textcolor{green}{1})$ means for this child $ \textcolor{blue}{1}$, we can get the maximum distance of $\textcolor{red}{1}$, by going to the node $\textcolor{green}{1}$.
-  - $(\textcolor{red}{4}, \textcolor{blue}{8}, \textcolor{green}{10})$ means for this child $ \textcolor{blue}{8}$, we can get the maximum distance of $\textcolor{red}{4}$, by going to the node $\textcolor{green}{10}$.
+  - $(\textcolor{red}{1}, \textcolor{blue}{1}, \textcolor{green}{1})$ means for this child $\textcolor{blue}{1}$, we can get the maximum distance of $\textcolor{red}{1}$, by going to the node $\textcolor{green}{1}$.
+  - $(\textcolor{red}{4}, \textcolor{blue}{8}, \textcolor{green}{10})$ means for this child $\textcolor{blue}{8}$, we can get the maximum distance of $\textcolor{red}{4}$, by going to the node $\textcolor{green}{10}$.
     - This is correct because if you see in the original tree, the distance of $2$ to $10$ is $4$.
     - Now, this is just a simple case where the tree is unweighted, but the logic will be similar for weighted trees, it's just when computing depth, we will increase it by the edge weight instead of just $1$.
 
